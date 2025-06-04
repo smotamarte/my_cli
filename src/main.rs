@@ -1,7 +1,7 @@
-use clap::{Parser, Subcommand};
+use clap::{crate_version, Parser, Subcommand};
 
 #[derive(Parser)]
-#[command(author, version, about, long_about = None)]
+#[command(author, version = crate_version!(), about, long_about = None)]
 struct Cli {
     #[arg(short, long)]
     verbose: bool,
@@ -41,7 +41,7 @@ enum Commands {
 }
 
 fn main() {
-    let cli = Cli::parse();
+    let cli: Cli = Cli::parse();
 
     if cli.verbose {
         println!("Debugging set to true");
