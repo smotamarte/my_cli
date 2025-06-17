@@ -5,4 +5,6 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.x.x", features = ["derive", "cargo"] }
-
+rusqlite = { version = "0.30.0", features = ["functions"] }
+dirs = "5.0"
+shellexpand = "3.1.0"
